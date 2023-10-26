@@ -1,0 +1,11 @@
+<h1>Pages#admin</h1>
+<p>Sign up admins on this page</p>
+
+<h3>Admin Sign Ups</h3>
+
+<% if admin_signed_in? %>
+  <%= link_to "Admin Sign Out", destroy_admin_session_path, method: :delete, data: { turbo_method: :delete } %>
+  <%= link_to "Admin Edit Profile", edit_admin_registration_path %>
+<% else %>
+  <%= link_to "Admin Sign In", new_admin_session_path %>
+<% end %>
